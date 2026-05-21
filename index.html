@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JeniPass - Turismo Cultural do Piauí</title>
+  
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Configuração customizada do Tailwind -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'jeni-blue': '#2B5797',
+            'jeni-blue-dark': '#1E3A5F',
+            'jeni-orange': '#F59E0B',
+            'jeni-green': '#10B981',
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Font Awesome para ícones -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- CSS customizado -->
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body class="bg-gray-50 min-h-screen">
+
+  <!-- CONTAINER PRINCIPAL - Simula tela de celular -->
+  <div id="app" class="max-w-md mx-auto bg-white min-h-screen shadow-2xl relative">
+    
+    <!-- TELA DE LOGIN -->
+   <!-- ========================================
+     TELA DE LOGIN
+     ======================================== -->
+<div id="telaLogin" class="tela min-h-screen flex flex-col justify-center items-center p-6" style="background: #2B5797;">
+  
+  <!-- Logo e Título -->
+  <div class="text-center mb-8">
+    <!-- Logo SVG Original -->
+    <div class="w-40 h-40 mx-auto mb-6">
+      <img src="imagens/logo-jenipass.svg" alt="JeniPass Logo" class="w-full h-full">
+    </div>
+    
+  
+  </div>
+
+  <!-- Card Branco com Formulário -->
+  <div class="w-full max-w-sm bg-white rounded-2xl shadow-2xl p-8">
+    
+    <!-- Campo E-mail -->
+    <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-semibold mb-2">E-mail</label>
+      <input 
+        type="email" 
+        id="inputUsuario"
+        placeholder=""
+        class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 transition-colors"
+      >
+    </div>
+    
+    <!-- Campo Senha -->
+    <div class="mb-2">
+      <label class="block text-gray-700 text-sm font-semibold mb-2">Senha</label>
+      <input 
+        type="password" 
+        id="inputSenha"
+        placeholder=""
+        class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 transition-colors"
+      >
+    </div>
+    
+    <!-- Link Esqueci Senha -->
+    <div class="text-right mb-6">
+      <a href="#" onclick="return false;" class="text-sm text-blue-600 hover:text-blue-800 hover:underline">
+        Esqueci minha senha
+      </a>
+    </div>
+    
+    <!-- Botão Login -->
+    <button 
+      onclick="fazerLogin()"
+      class="w-full bg-white text-gray-800 border-2 border-gray-800 py-3 rounded-full font-bold text-lg hover:bg-gray-800 hover:text-white transition-all shadow-md mb-4"
+    >
+      Login
+    </button>
+    
+    <!-- Link Cadastre-se -->
+    <div class="text-center">
+      <a href="#" onclick="return false;" class="text-sm text-blue-600 hover:text-blue-800 hover:underline font-semibold">
+        Cadastre-se
+      </a>
+    </div>
+    
+  </div>
+  
+  <!-- Espaço inferior -->
+  <div class="h-16"></div>
+  
+</div>
+        
+       
+        
+       
+    <!-- TELA DE ROTAS (div vazia, será preenchida por JS) -->
+    <div id="telaRotas" class="tela hidden pb-20"></div>
+
+    <!-- TELA DE DETALHE DA ROTA -->
+    <div id="telaDetalheRota" class="tela hidden pb-20"></div>
+
+    <!-- TELA DE CATÁLOGO -->
+    <div id="telaCatalogo" class="tela hidden pb-20"></div>
+
+    <!-- TELA DE HISTÓRICO -->
+    <div id="telaHistorico" class="tela hidden pb-20"></div>
+
+    <!-- TELA DE PERFIL -->
+    <div id="telaPerfil" class="tela hidden pb-20"></div>
+
+    <!-- BARRA DE NAVEGAÇÃO INFERIOR -->
+    <nav id="barraNavegacao" class="hidden fixed bottom-0 left-0 right-0 max-w-md mx-auto bg-white border-t border-gray-200 shadow-lg z-50">
+      <div class="flex justify-around items-center h-16">
+        
+        <button 
+          onclick="navegarPara('rotas')"
+          id="botaoNavRotas"
+          class="flex flex-col items-center justify-center flex-1 h-full text-jeni-blue transition-colors"
+        >
+          <i class="fas fa-map text-xl mb-0.5"></i>
+          <span class="text-xs font-medium">Rotas</span>
+        </button>
+
+        <button 
+          onclick="navegarPara('catalogo')"
+          id="botaoNavCatalogo"
+          class="flex flex-col items-center justify-center flex-1 h-full text-gray-400 hover:text-jeni-blue transition-colors"
+        >
+          <i class="fas fa-gift text-xl mb-0.5"></i>
+          <span class="text-xs font-medium">Catálogo</span>
+        </button>
+
+        <button 
+          onclick="navegarPara('historico')"
+          id="botaoNavHistorico"
+          class="flex flex-col items-center justify-center flex-1 h-full text-gray-400 hover:text-jeni-blue transition-colors"
+        >
+          <i class="fas fa-history text-xl mb-0.5"></i>
+          <span class="text-xs font-medium">Histórico</span>
+        </button>
+
+        <button 
+          onclick="navegarPara('perfil')"
+          id="botaoNavPerfil"
+          class="flex flex-col items-center justify-center flex-1 h-full text-gray-400 hover:text-jeni-blue transition-colors"
+        >
+          <i class="fas fa-user text-xl mb-0.5"></i>
+          <span class="text-xs font-medium">Perfil</span>
+        </button>
+
+      </div>
+    </nav>
+
+  </div>
+
+  <!-- MODAIS (serão criados dinamicamente ou incluídos aqui) -->
+  <div id="modalDescricaoLocal" class="hidden"></div>
+  <div id="modalScannerQR" class="hidden"></div>
+  <div id="modalCodigoManual" class="hidden"></div>
+  <div id="modalPin" class="hidden"></div>
+
+  <!-- Scripts JavaScript -->
+  <script src="js/dados.js"></script>
+  <script src="js/estado.js"></script>
+  <script src="js/autenticacao.js"></script>
+  <script src="js/navegacao.js"></script>
+  <script src="js/telaRotas.js"></script>
+  <script src="js/telaDetalheRota.js"></script>
+  <script src="js/telaCatalogo.js"></script>
+  <script src="js/telaHistorico.js"></script>
+  <script src="js/telaPerfil.js"></script>
+  <script src="js/modais.js"></script>
+  <script src="js/scanner.js"></script>
+  <script src="js/inicializacao.js"></script>
+
+</body>
+</html>
