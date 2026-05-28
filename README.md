@@ -172,7 +172,6 @@ O que JeniPass faz que outros não fazem:
 
 ## Equipe
 
-Desenvolvimento em 6 semanas por alunos de ensino médio:
 
 1. Ananda Lys Moura dos Santos - Frontend
 2. Bruno Farias da Silva Chaves - Backend
