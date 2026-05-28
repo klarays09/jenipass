@@ -87,8 +87,41 @@ const rotasTuristicas = [
       },
     ],
   },
+  // ⬇️ TERCEIRA ROTA - ADICIONE AQUI:
+  {
+    id: 'rota-delta',
+    nome: 'Serra de Santo Antônio',
+    descricao: 'Desbrave a escadaria da Serra',
+    imagem: 'imagens/serra.jpg',
+    sazonal: false,
+    locais: [
+      {
+        id: 'loc-passeio-barco',
+        codigo: 'LOC009',
+        nome: 'Passeio de Barco',
+        imagem: 'imagens/barco.jpg',
+        descricao: 'Navegue pelos canais do delta e descubra a rica biodiversidade da região. Durante o passeio, observe manguezais, dunas e a fauna típica do ecossistema.',
+        recompensa: 60,
+      },
+      {
+        id: 'loc-ilha-canarias',
+        codigo: 'LOC010',
+        nome: 'Ilha das Canárias',
+        imagem: 'imagens/canarias.jpg',
+        descricao: 'A Ilha das Canárias encanta com suas praias de água doce e paisagens paradisíacas. Um verdadeiro refúgio natural no coração do Delta.',
+        recompensa: 60,
+      },
+      {
+        id: 'loc-guaras',
+        codigo: 'LOC011',
+        nome: 'Revoada dos Guarás',
+        imagem: 'imagens/guaras.jpg',
+        descricao: 'Ao final da tarde, testemunhe o espetáculo da natureza: milhares de guarás-vermelhos retornando para seus ninhos. Um show de cores inesquecível!',
+        recompensa: 60,
+      },
+    ],
+  },
 ];
-
 const recompensasCulturais = [
   {
     id: 'rec-tecelagem',
