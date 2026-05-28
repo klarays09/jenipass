@@ -173,11 +173,11 @@ O que JeniPass faz que outros não fazem:
 ## Equipe
 
 
-1. Ananda Lys Moura dos Santos - Frontend
-2. Bruno Farias da Silva Chaves - Backend
-3. João Gabriel Portela de Abreu - Full Stack
-4. Julyanna da Silva Costa - Design
-5. Klara Alanys Gomes Teixeira - Arquitetura
+1. Ananda Lys Moura dos Santos 
+2. Bruno Farias da Silva Chaves 
+3. João Gabriel Portela de Abreu 
+4. Julyanna da Silva Costa 
+5. Klara Alanys Gomes Teixeira 
 
 Orientador: Olimpio Passos de Carvalho Segundo
 
